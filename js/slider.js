@@ -8,7 +8,6 @@ const totalSlides = document.querySelectorAll(".slide").length;
 
 let currentSlide = 0;
 
-// Показываем слайд
 function showSlide(index) {
 
     if (index >= totalSlides) {
@@ -26,24 +25,20 @@ function showSlide(index) {
         `${currentSlide + 1} / ${totalSlides}`;
 }
 
-// Переключение вперёд
 nextButton.addEventListener("click", function() {
     showSlide(currentSlide + 1);
     resetTimer();
 });
 
-// Переключение назад
 prevButton.addEventListener("click", function() {
     showSlide(currentSlide - 1);
     resetTimer();
 });
 
-// Автоматическое переключение
 let timer = setInterval(function() {
     showSlide(currentSlide + 1);
 }, 5000);
 
-// Перезапуск таймера
 function resetTimer() {
     clearInterval(timer);
 
@@ -52,5 +47,4 @@ function resetTimer() {
     }, 5000);
 }
 
-// Первый слайд при загрузке
 showSlide(0);
