@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управление данными и слайдер</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Задание 1: таблица -->
+    <section class="section">
+        <h1>Управление данными</h1>
+
+        <h2>Добавление пользователя</h2>
+
+        <form id="userForm" novalidate>
+            <input type="text" id="name" placeholder="Введите имя">
+            <input type="email" id="email" placeholder="Введите Email">
+            <input type="tel" id="phone" placeholder="Введите телефон">
+
+            <div id="errorMessage" class="error-message"></div>
+
+            <button type="submit" class="add-btn">Добавить</button>
+        </form>
+
+        <h2>Таблица пользователей</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Имя</th>
+                    <th>Email</th>
+                    <th>Телефон</th>
+                    <th>Действие</th>
+                </tr>
+            </thead>
+            <tbody id="userTable"></tbody>
+        </table>
+    </section>
+
+    <!-- Задание 2: слайдер -->
+    <section class="section">
+        <h1>Слайдер</h1>
+
+        <div class="slider">
+            <div class="slides" id="slides">
+
+                <div class="slide">
+                    <h3>Первый слайд</h3>
+                    <p>Добро пожаловать!</p>
+                </div>
+
+                <div class="slide">
+                    <h3>Второй слайд</h3>
+                    <p>Информация о проекте.</p>
+                </div>
+
+                <div class="slide">
+                    <h3>Третий слайд</h3>
+                    <p>Чистый JavaScript.</p>
+                </div>
+
+                <div class="slide">
+                    <h3>Четвёртый слайд</h3>
+                    <p>Автоматическое переключение.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="slider-controls">
+            <button id="prev">‹</button>
+            <span id="slideNumber">1 / 4</span>
+            <button id="next">›</button>
+        </div>
+    </section>
+
+</div>
+
+<script src="js/table.js"></script>
+<script src="js/slider.js"></script>
+
+</body>
+</html>
