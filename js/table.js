@@ -6,15 +6,12 @@ const phoneInput = document.getElementById("phone");
 const table = document.getElementById("userTable");
 const errorMessage = document.getElementById("errorMessage");
 
-// Загружаем данные из localStorage
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
-// Сохраняем данные
 function saveUsers() {
     localStorage.setItem("users", JSON.stringify(users));
 }
 
-// Отображаем таблицу
 function renderUsers() {
     table.innerHTML = "";
 
@@ -59,20 +56,17 @@ function renderUsers() {
     });
 }
 
-// Удаляем пользователя
 function deleteUser(index) {
     users.splice(index, 1);
     saveUsers();
     renderUsers();
 }
 
-// Проверяем Email
 function isValidEmail(email) {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
     return pattern.test(email);
 }
 
-// Обработка формы
 form.addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -125,5 +119,4 @@ form.addEventListener("submit", function(event) {
     form.reset();
 });
 
-// Первоначальная загрузка таблицы
 renderUsers();
